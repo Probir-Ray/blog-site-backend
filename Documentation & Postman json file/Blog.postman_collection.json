@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "d1d5f875-5e93-42d3-9cf5-e9a95d86299c",
+		"name": "Blog",
+		"description": "Blog Post REST API Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23362581"
+	},
+	"item": [
+		{
+			"name": "CreateProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"FirstName\": \"Modon\",\r\n    \"LastName\": \"Mohon\",\r\n    \"EmailAddress\": \"modon23@yahoo.com\",\r\n    \"UserName\": \"modon23\",\r\n    \"Password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/CreateProfile",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"CreateProfile"
+					]
+				},
+				"description": "Post a article at first creating a account with following information:\n\n1. First Name\n2. Last Name\n3. Email Address\n4. User Name &\n5. Password"
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"UserName\": \"modon23\",\r\n    \"Password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/UserLogin",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"UserLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelectProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/SelectProfile",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"SelectProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBlogPost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Mongoose Framework\",\r\n    \"content\": \"Mongoose version 3.7.2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/CreateBlogPost",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"CreateBlogPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadBlogPost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/ReadBlogPostByAuthor",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"ReadBlogPostByAuthor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadSingleBlogPost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/ReadSingleBlogPost/63fa264ae1d1e186a38711b8",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"ReadSingleBlogPost",
+						"63fa264ae1d1e186a38711b8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBlogPost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"title\": \"Nodejs 17.59\",\r\n    \"content\": \"Nodejs 17.59 version\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/UpdateBlogPost/63fa2de6433aa37ba6c1472a",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"UpdateBlogPost",
+						"63fa2de6433aa37ba6c1472a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBlogPost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/DeleteBlogPost/63fa34e0012b980da1d0f03b",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"DeleteBlogPost",
+						"63fa34e0012b980da1d0f03b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000/api/v2",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc0MjgyNjMsImRhdGEiOnsiX2lkIjoiNjNmYTFhYWE1MWRhZmI2MjE3ZGExMmQ3IiwiRmlyc3ROYW1lIjoiTW9kb24iLCJMYXN0TmFtZSI6Ik1vaG9uIiwiRW1haWxBZGRyZXNzIjoibW9kb24yM0B5YWhvby5jb20iLCJVc2VyTmFtZSI6Im1vZG9uMjMifSwiaWF0IjoxNjc3MzQxODYzfQ.oTmVFdUq4qO7u_a_rqMUlZQreAxcaHeoUryFgl-lros",
+			"type": "string"
+		}
+	]
+}
