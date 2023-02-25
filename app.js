@@ -11,9 +11,11 @@ const helmet = require("helmet");
 const hpp = require("hpp");
 const xss = require("xss-clean");
 
+
 // Database Library Import
 const mongoose = require("mongoose");
 const router = require("./src/routes/api");
+
 
 // Security Middleware Implementation
 app.use(cors());
@@ -22,17 +24,20 @@ app.use(helmet());
 app.use(hpp());
 app.use(xss());
 
+
 // Body parser
 app.use(express.json());
 
+
+// Limiter Implementation
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 250,
 });
 app.use(limiter);
 
-// MongoDB Database Connection
 
+// MongoDB Database Connection
 const URI = `mongodb+srv://<username>:<password>@cluster0.xrfjl.mongodb.net/Blog?retryWrites=true&w=majority`;
 mongoose.set("strictQuery", false);
 let OPTION = { user: "dhaka", pass: "Dhaka2023", autoIndex: true };

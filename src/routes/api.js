@@ -11,6 +11,9 @@ router.get("/SelectProfile", AuthVerifyMiddleware, ProfileController.SelectProfi
 
 // Blog post controller
 router.post("/CreateBlogPost", AuthVerifyMiddleware, BlogPostController.CreateBlogPost)
+router.get("/ReadBlogPostByAuthor", AuthVerifyMiddleware, BlogPostController.ReadBlogPostByAuthor)
+router.get("/ReadSingleBlogPost/:id", AuthVerifyMiddleware, BlogPostController.ReadSingleBlogPost)
+router.post("/UpdateBlogPost/:id", AuthVerifyMiddleware, BlogPostController.UpdateBlogPost)
 
 
 module.exports = router;
