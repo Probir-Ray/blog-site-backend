@@ -48,3 +48,13 @@ exports.UpdateBlogPost = (req, res) => {
 
 
 
+// Delete post
+exports.DeleteBlogPost = (req, res) => {
+    const _id = req.params.id;
+    const author = req.headers.UserName;
+    BlogModel.deleteOne({_id, author}, (err, data) => {
+        if (err) res.status(400).json({ status: "Fail", data: err });
+        else res.status(200).json({ status: "Ok", data });
+    })
+}
+

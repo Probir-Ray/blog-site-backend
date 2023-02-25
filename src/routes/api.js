@@ -14,6 +14,7 @@ router.post("/CreateBlogPost", AuthVerifyMiddleware, BlogPostController.CreateBl
 router.get("/ReadBlogPostByAuthor", AuthVerifyMiddleware, BlogPostController.ReadBlogPostByAuthor)
 router.get("/ReadSingleBlogPost/:id", AuthVerifyMiddleware, BlogPostController.ReadSingleBlogPost)
 router.post("/UpdateBlogPost/:id", AuthVerifyMiddleware, BlogPostController.UpdateBlogPost)
+router.get("/DeleteBlogPost/:id", AuthVerifyMiddleware, BlogPostController.DeleteBlogPost)
 
 
 module.exports = router;
